@@ -1,0 +1,17 @@
+<h1>{{movie.title}}</h1>
+Release year: {{movie.year}}
+<h3>Director/s</h3>
+<ul class="border">
+  <li *ngFor="let d of movie.info.directors">
+    <a> {{d}} </a> 
+  </li>
+</ul>
+<h3>Actors/s</h3>
+<ul class="border">
+  <li *ngFor="let d of movie.info.actors">
+    <a> {{d}} </a> 
+  </li>
+</ul>
+<h3>Plot</h3>
+{{movie.info.plot}}
+

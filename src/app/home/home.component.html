@@ -1,0 +1,29 @@
+<h1>Movies App</h1>
+<p><a (click)="router.navigate(['/search'])">Search Page</a></p>
+<em>Click the list items to see details.</em>
+
+<h2>Latest movies</h2>
+<ul>
+  <li *ngFor="let movie of latestMovies">
+    <a (click)="showDetiails(movie)"> {{movie.title}} / {{movie.year}} </a> 
+  </li>
+</ul>
+
+<h3>Search by title</h3>
+<em>Press enter to search...</em>
+
+<div>
+  <input [(ngModel)]="searchBox" 
+  (keyup.enter)="quickSearch();"/>
+</div>
+
+
+<h2>Search Result</h2>
+<em *ngIf="!searchedMovies">No Results</em>
+<ul class="border">
+  <li *ngFor="let movie of searchedMovies">
+    <a (click)="showDetiails(movie)"> {{movie.title}} / {{movie.year}} </a> 
+  </li>
+</ul>
+
+

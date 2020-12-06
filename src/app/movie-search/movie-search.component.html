@@ -1,0 +1,19 @@
+<h3>Search movies</h3>
+
+<div>
+  <input [(ngModel)]="searchBox" 
+  />
+  <select [(ngModel)]="searchCriteria">
+    <option *ngFor="let c of searchCriterias" [ngValue]="c">{{c}}</option>
+  </select>
+  <button (click)="quickSearch();">Search</button>
+</div>
+
+
+<h2>Search Result</h2>
+<em *ngIf="!searchedMovies">No Results</em>
+<ul class="border">
+  <li *ngFor="let movie of searchedMovies">
+    <a (click)="showDetiails(movie)"> {{movie.title}} / {{movie.year}} </a> 
+  </li>
+</ul>
